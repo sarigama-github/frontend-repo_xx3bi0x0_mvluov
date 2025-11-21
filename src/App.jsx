@@ -1,71 +1,45 @@
+import React from 'react'
+import Hero from './components/Hero'
+import About from './components/About'
+import Products from './components/Products'
+import Quality from './components/Quality'
+import Packaging from './components/Packaging'
+import Contact from './components/Contact'
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
-
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
+    <div className="min-h-screen bg-white" dir="rtl">
+      {/* Top subtle announcement / brand strip */}
+      <header className="relative z-20">
+        <div className="w-full bg-[#7e0e14] text-[#f6e7cc] text-sm sm:text-base">
+          <div className="container mx-auto px-6 py-2 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <img src="/alhosam-logo.svg" alt="الحسام" className="h-8 w-auto"/>
             </div>
-
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
-          </div>
-
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
+            <nav className="hidden sm:flex items-center gap-6 opacity-90">
+              <a href="#about" className="hover:text-white">من نحن</a>
+              <a href="#products" className="hover:text-white">المنتجات</a>
+              <a href="#contact" className="hover:text-white">تواصل</a>
+            </nav>
           </div>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <Hero />
+        <About />
+        <Products />
+        <Quality />
+        <Packaging />
+        <Contact />
+      </main>
+
+      <footer className="bg-[#7e0e14] text-[#f6e7cc]">
+        <div className="container mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm">© {new Date().getFullYear()} الحسام ALHOSAM — جميع الحقوق محفوظة</p>
+          <div className="text-xs opacity-80">علامة تجارية سورية للمنتجات الزراعية</div>
+        </div>
+      </footer>
     </div>
   )
 }
